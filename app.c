@@ -17,7 +17,7 @@ void MenuPrincipal (){
     printf("+=======================================+\n");
     printf("|               Iris PetShop            |\n");
     printf("+=======================================+\n");
-    printf("|    1-CADASTRO       |   2-SUBTRACAO   |\n");
+    printf("|    1-CADASTRO       |   2-IMPRESSÃO  |\n");
     printf("+=======================================+\n");
     printf("|    3-MULTIPLICACAO  |   4-DIVISAO     |\n");
     printf("+=======================================+\n");
