@@ -1,12 +1,10 @@
-/**
- * Todas as interações do usuários serão por meio de um MENU
+/*
+- Todas as interações do usuários serão por meio de um MENU
 - Na opção de cadastro o Algoritmo deverá permitir cadastrar no minimo 5 registros para todas as opções.
 - Também na opção de Cadastro a aplicação terá que gravar as informações num arquivo texto com o nome correspondente ao cadastro (Ex. se o cadastro for de produto, deverá conter um arquivo com o mesmo nome PRODUTO.TXT)
 - Aplicação deverá funcionar conforme os Menus que serão criados possibilitando o usuário executar as opçoes quantas vezes ele desejar.
-- Cada Equipe deverá conter no máximo 4 integrantes, pode ser feito em dupla ou individual.
-- Cada equipe deverá optar por uma das propostas apresentadas a seguir, e caso queiram mudar de proposta deverá apresentar uma diferente das apresentados aqui (tipo, CONTROLE DE PET SHOP, BARBEARIA, SALÃO DE BELEZA, ENTRE OUTROS) 
+- CONTROLE DE PET SHOP,  
 */
-
 #include <stdio.h>
 
 float valor1, valor2, res;
@@ -14,15 +12,15 @@ int operacao;
 int retorno;
 
 void MenuPrincipal (){
-    printf("+=======================================+\n");
-    printf("|               Iris PetShop            |\n");
-    printf("+=======================================+\n");
-    printf("|    1-CADASTRO       |   2-IMPRESSÃO  |\n");
-    printf("+=======================================+\n");
-    printf("|    3-MULTIPLICACAO  |   4-DIVISAO     |\n");
-    printf("+=======================================+\n");
-    printf("|                  5-SAIR               |\n");
-    printf("+=======================================+\n");
+    printf("+===========================================+\n");
+    printf("|                 Iris PetShop              |\n");
+    printf("+===========================================+\n");
+    printf("|    1-CADASTRO         |   2-IMPRESSÃO     |\n");
+    printf("+===========================================+\n");
+    printf("|    3-GERAR SERVIÇOS   |   4-FINANCEIRO    |\n");
+    printf("+===========================================+\n");
+    printf("|    5-GERAR PRODUTOS   |   5-SAIR          |\n");
+    printf("+===========================================+\n");
     scanf("%d", &operacao);
 }
 
@@ -35,23 +33,53 @@ void Entrada(){
      printf("Digite o segundo valor: \n");
      scanf("%f", &valor2);
 } 
-void somar(){
-    res = valor1 + valor2;
+void Cadastro(){
+    printf("+===========================================+\n");
+    printf("|                 CADASTRO                  |\n");
+    printf("+===========================================+\n");
+    printf("|    1-CLIENTE         |   2-PRODUTO        |\n");
+    printf("+===========================================+\n");
+    printf("|    3-FUNCIONÁRIO     |   4-SERVIÇO        |\n");
+    printf("+===========================================+\n");
+    printf("|    5-ANIMAL          |   6-RETORNAR       |\n");
+    printf("+===========================================+\n");
+    scanf("%d", &operacao);
 }
-void subtrair(){
-    res = valor1 - valor2;
+void Impressão(){
+    printf("+===========================================+\n");
+    printf("|                 IMPRESSÃO                 |\n");
+    printf("+===========================================+\n");
+    printf("|    1-CLIENTE         |   2-PRODUTO        |\n");
+    printf("+===========================================+\n");
+    printf("|    3-FUNCIONÁRIO     |   4-SERVIÇO        |\n");
+    printf("+===========================================+\n");
+    printf("|    5-ANIMAL          |   6-SAIR           |\n");
+    printf("+===========================================+\n");
+    scanf("%d", &operacao);
 }
-void multiplicar(){
-    res = valor1*valor2;
+void GerarServiços(){
+    printf("+===========================================+\n");
+    printf("|                GERAR SERVIÇOS             |\n");
+    printf("+===========================================+\n");
+    printf("|       1-BANHO         |     2-TOSA        |\n");
+    printf("+===========================================+\n");
+    printf("|       3-CONSULTA      |     4-VACINAÇÃO   |\n");
+    printf("+===========================================+\n");
+    printf("|                    5-SAIR                 |\n");
+    printf("+===========================================+\n");
+    scanf("%d", &operacao);
 }
-void dividir(){
-    res = valor1/valor2;
-}
-void Potencia(){
-    res = pow(valor1, valor2);
-}
-void saida(){
-    printf("O resultado da operacao e: %.2lf\n", res);
+void Financeiro(){
+    printf("+===========================================+\n");
+    printf("|                  FINANCEIRO               |\n");
+    printf("+===========================================+\n");
+    printf("|       1-PRODUTO       |   2-SERVIÇOS      |\n");
+    printf("+===========================================+\n");
+    printf("|       3-SALÁRIOS      |   4-ALUGUEL       |\n");
+    printf("+===========================================+\n");
+    printf("|                    5-SAIR                 |\n");
+    printf("+===========================================+\n");
+    scanf("%d", &operacao);
 }
 int main (){
 do{   
@@ -63,37 +91,28 @@ do{
     case 1:
         system("cls");
         Entrada();
-        somar();
-        saida();
+        Cadastro();
         break;
     case 2:
         system("cls");
         Entrada();
-        subtrair();
-        saida();
+        Impressão();
         break;
     case 3:
         system("cls");
         Entrada();
-        multiplicar();
-        saida();
+        GerarServiços();
         break;
     case 4:
         system("cls");
         Entrada();
-        dividir();
+        Faturamento();
         if(valor2 == 0){
         printf("Divisor nulo. Insira numero valido.\n");
         break;}
         saida();
         break;
     case 5:
-        system("cls");
-        Entrada();
-        Potencia();
-        saida();
-        break;
-    case 6:
         break;
     default:
         printf("Opcao invalida! \n");
