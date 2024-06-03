@@ -19,7 +19,7 @@ void MenuPrincipal (){
     printf("+===========================================+\n");
     printf("|    3-GERAR SERVIÇOS   |   4-FINANCEIRO    |\n");
     printf("+===========================================+\n");
-    printf("|    5-GERAR PRODUTOS   |   5-SAIR          |\n");
+    printf("|    5-VENDA            |   5-SAIR          |\n");
     printf("+===========================================+\n");
     scanf("%d", &operacao);
 }
