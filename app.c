@@ -1,7 +1,10 @@
 /**
- * - Na opção de cadastro o Algoritmo deverá permitir cadastrar no minimo 5 registros para todas as opções.
-- Também na opção de Cadastro a aplicação terá que gravar as informações num arquivo texto com o nome
-  correspondente ao cadastro (Ex. se o cadastro for de produto, deverá conter um arquivo com o mesmo nome PRODUTO.TXT)
+ * Todas as interações do usuários serão por meio de um MENU
+- Na opção de cadastro o Algoritmo deverá permitir cadastrar no minimo 5 registros para todas as opções.
+- Também na opção de Cadastro a aplicação terá que gravar as informações num arquivo texto com o nome correspondente ao cadastro (Ex. se o cadastro for de produto, deverá conter um arquivo com o mesmo nome PRODUTO.TXT)
+- Aplicação deverá funcionar conforme os Menus que serão criados possibilitando o usuário executar as opçoes quantas vezes ele desejar.
+- Cada Equipe deverá conter no máximo 4 integrantes, pode ser feito em dupla ou individual.
+- Cada equipe deverá optar por uma das propostas apresentadas a seguir, e caso queiram mudar de proposta deverá apresentar uma diferente das apresentados aqui (tipo, CONTROLE DE PET SHOP, BARBEARIA, SALÃO DE BELEZA, ENTRE OUTROS) 
 */
 
 #include <stdio.h>
