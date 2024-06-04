@@ -6,6 +6,7 @@
 - CONTROLE DE PET SHOP,  
 */
 #include <stdio.h>
+#include <stdlib.h>
 
 float valor1, valor2, res;
 int operacao;
