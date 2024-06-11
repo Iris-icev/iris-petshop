@@ -19,7 +19,6 @@ struct cadastroFuncionario {
     char nome[50];
     char dataNasc[30];
     char cpf[30];
-    char cargo[30];
 };
 
 struct cadastroServico {
@@ -33,9 +32,6 @@ struct cadastroAnimal {
     char raca[50];
 };
 
-
-
-
 void CadastroCliente() {
     int controller = 1;
     do {
@@ -46,12 +42,75 @@ void CadastroCliente() {
         scanf("%s", cliente.dataNasc);
         printf("Insira o cpf:\n");
         scanf("%s", cliente.cpf);
-        printf("Deseja cadastrar novo cliente?: 1 - SIM 2 - NÃO\n");
-        
+        // funcao para inserir cliente no arquivo
+        printf("Deseja cadastrar novo cliente? 1 - SIM 2 - NÃO\n");
 
         scanf("%d", &controller);
         
     } while(controller == 1);
+}
+
+void CadastroProduto() {
+    int controller = 1;
+    do {
+        struct cadastroProduto produto;
+        printf("Insira o nome do produto: \n");
+        scanf("%s", produto.nome);
+        printf("Insira o preço do produto: \n");
+        scanf("%f", &produto.preco);
+        printf("Insira o código de barras: \n");
+        scanf("%d", &produto.codigo_de_barras);
+        // FUNCAO PARA INSERIR PRODUTO NO ARQUIVO
+        printf("Deseja cadastrar novo produto? 1 - SIM 2 - NÃO\n");
+        scanf("%d", &controller);
+    } while (controller == 1);
+}
+
+void CadastroFuncionario() {
+    int controller = 1;
+    do {
+        struct cadastroFuncionario funcionario;
+        printf("Insira o nome do funcionário: \n");
+        scanf("%s", funcionario.nome);
+        printf("Insira a data de nascimento do funcionário: \n");
+        scanf("%s", funcionario.dataNasc);
+        printf("Insira o cpf do funcionário: \n");
+        scanf("%s", funcionario.cpf);
+        // FUNCAO PARA INSERIR funcionario NO ARQUIVO
+        printf("Deseja cadastrar novo funcionario? 1 - SIM 2 - NÃO\n");
+        scanf("%d", &controller);
+    } while (controller == 1);
+    Cadastro();
+}
+
+void CadastroServico() {
+    int controller = 1;
+    do {
+        struct cadastroServico servico;
+        printf("Insira o nome do serviço: \n");
+        scanf("%s", servico.nome);
+        printf("Insira o preço do serviço: \n");
+        scanf("%f", &servico.preco);
+        // FUNCAO PARA INSERIR funcionario NO ARQUIVO
+        printf("Deseja cadastrar novo serviço? 1 - SIM 2 - NÃO\n");
+        scanf("%d", &controller);
+    } while (controller == 1);
+}
+
+void CadastroAnimal() {
+    int controller = 1;
+    do {
+        struct cadastroAnimal animal;
+        printf("Insira o nome do animal: \n");
+        scanf("%s", animal.nome);
+        printf("Insira o preso do animal: \n");
+        scanf("%f", &animal.peso);
+        printf("Insira a raça do animal: \n");
+        scanf("%s", animal.raca);
+        // FUNCAO PARA INSERIR funcionario NO ARQUIVO
+        printf("Deseja cadastrar novo animal? 1 - SIM 2 - NÃO\n");
+        scanf("%d", &controller);
+    } while (controller == 1);
 }
 
 void Cadastro()
@@ -76,16 +135,16 @@ void Cadastro()
         CadastroCliente();
         break;
     case 2:
-        // funcao para produto
+        CadastroProduto();
         break;
     case 3:
-        // funcao para funcionario
+        CadastroFuncionario();
         break;
     case 4:
-        //funcao para servico
+        CadastroServico();
         break;
     case 5:
-        // funcao para animal
+        CadastroAnimal();
         break;
     case 6:
         //funcao para retornar
