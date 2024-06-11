@@ -8,7 +8,7 @@ void Financeiro()
     printf("+===========================================+\n");
     printf("|       1-PRODUTO       |   2-SERVIÇOS      |\n");
     printf("+===========================================+\n");
-    printf("|       3-SALÁRIOS      |   4-ALUGUEL       |\n");
+    printf("|       3-SALÁRIOS      |   4-ALUGUEL       |\n"); // tirar aluguel
     printf("+===========================================+\n");
     printf("|                  5-RETORNAR               |\n");
     printf("+===========================================+\n");

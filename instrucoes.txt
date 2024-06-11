@@ -1,5 +1,5 @@
 rodar o codigo
-na pasta irispetsho rodar
+na pasta irispetshop rodar
 gcc -c app.c -o app.o
 gcc -c cadastro/Cadastro.c -o cadastro/Cadastro.o
 gcc -c impressao/Impressao.c -o impressao/Impressao.o

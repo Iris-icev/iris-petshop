@@ -26,7 +26,7 @@ void MenuPrincipal()
     printf("+===========================================+\n");
     printf("|    1-CADASTRO         |   2-IMPRESSÃO     |\n");
     printf("+===========================================+\n");
-    printf("|    3-GERAR SERVIÇOS   |   4-FINANCEIRO    |\n");
+    printf("|    3-GERAR SERVIÇOS   |   4-FINANCEIRO    |\n"); // tirar serviço e venda
     printf("+===========================================+\n");
     printf("|    5-VENDA            |   6-SAIR          |\n");
     printf("+===========================================+\n");

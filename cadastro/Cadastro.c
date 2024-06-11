@@ -48,6 +48,7 @@ void CadastroCliente() {
         scanf("%d", &controller);
         
     } while(controller == 1);
+    Cadastro();
 }
 
 void CadastroProduto() {
@@ -95,6 +96,7 @@ void CadastroServico() {
         printf("Deseja cadastrar novo serviço? 1 - SIM 2 - NÃO\n");
         scanf("%d", &controller);
     } while (controller == 1);
+    Cadastro();
 }
 
 void CadastroAnimal() {
@@ -121,7 +123,7 @@ void Cadastro()
     printf("+===========================================+\n");
     printf("|    1-CLIENTE         |   2-PRODUTO        |\n");
     printf("+===========================================+\n");
-    printf("|    3-FUNCIONÁRIO     |   4-SERVIÇO        |\n");
+    printf("|    3-FUNCIONÁRIO     |   4-SERVIÇO        |\n"); // trocar serviço por venda
     printf("+===========================================+\n");
     printf("|    5-ANIMAL          |   6-RETORNAR       |\n");
     printf("+===========================================+\n");
