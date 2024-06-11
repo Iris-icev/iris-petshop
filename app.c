@@ -6,10 +6,17 @@
 - CONTROLE DE PET SHOP,
 */
 #include <stdio.h>
+#include "cadastro/Cadastro.h"
+#include "impressao/Impressao.h"
+#include "servicos/GerarServicos.h"
+#include "financeiro/Financeiro.h"
+#include "venda/Venda.h"
 
-float valor1, valor2, res;
-int retorno;
-int operacaoMenu;
+void Cadastro();
+void Impressao();
+void GerarServicos();
+void Financeiro();
+void Venda();
 
 void MenuPrincipal()
 {
@@ -25,89 +32,18 @@ void MenuPrincipal()
     printf("+===========================================+\n");
     printf("|           INSIRA A OPÇÃO DESEJADA         |\n");
     printf("+===========================================+\n");
-    scanf("%d", &operacaoMenu);
+    
 }
 
-void Entrada()
-{
-    do
-    {
-        printf("Digite o primeiro valor: \n");
-        retorno = scanf("%f", &valor1);
-    } while (retorno == 0);
-
-    printf("Digite o segundo valor: \n");
-    scanf("%f", &valor2);
-}
-void Cadastro()
-{
-    // 1
-    printf("+===========================================+\n");
-    printf("|                 CADASTRO                  |\n");
-    printf("+===========================================+\n");
-    printf("|    1-CLIENTE         |   2-PRODUTO        |\n");
-    printf("+===========================================+\n");
-    printf("|    3-FUNCIONÁRIO     |   4-SERVIÇO        |\n");
-    printf("+===========================================+\n");
-    printf("|    5-ANIMAL          |   6-RETORNAR       |\n");
-    printf("+===========================================+\n");
-}
-void Impressao()
-{
-    // 2
-    printf("+===========================================+\n");
-    printf("|                 IMPRESSÃO                 |\n");
-    printf("+===========================================+\n");
-    printf("|    1-CLIENTE         |   2-PRODUTO        |\n");
-    printf("+===========================================+\n");
-    printf("|    3-FUNCIONÁRIO     |   4-SERVIÇO        |\n");
-    printf("+===========================================+\n");
-    printf("|    5-ANIMAL          |   6-RETORNAR       |\n");
-    printf("+===========================================+\n");
-}
-void GerarServicos()
-{
-    // 3
-    printf("+==========================================================+\n");
-    printf("|                     GERAR SERVIÇOS                       |\n");
-    printf("+==========================================================+\n");
-    printf("|       1-Criar OS         |     2-Imprimir Serviço        |\n");
-    printf("+==========================================================+\n");
-    printf("|                     5-RETORNAR                           |\n");
-    printf("+==========================================================+\n");
-}
-void Financeiro()
-{
-    // 4
-    printf("+===========================================+\n");
-    printf("|                  FINANCEIRO               |\n");
-    printf("+===========================================+\n");
-    printf("|       1-PRODUTO       |   2-SERVIÇOS      |\n");
-    printf("+===========================================+\n");
-    printf("|       3-SALÁRIOS      |   4-ALUGUEL       |\n");
-    printf("+===========================================+\n");
-    printf("|                  5-RETORNAR               |\n");
-    printf("+===========================================+\n");
-}
-void Venda()
-{
-    // 5
-    printf("+==============================================+\n");
-    printf("|                     VENDA                    |\n");
-    printf("+==============================================+\n");
-    printf("|       1-GERAR VENDA   |   2-IMPRIMIR VENDAS  |\n");
-    printf("+==============================================+\n");
-    printf("|                  5-RETORNAR                  |\n");
-    printf("+==============================================+\n");
-}
 int main()
-{
+{   
+    int controller = 1;
+    MenuPrincipal();
+    do {
     int menu = 0;
+    scanf("%d", &menu);
     switch (menu)
     {
-    case 0:
-        MenuPrincipal();
-        break;
     case 1:
         Cadastro();
         break;
@@ -126,4 +62,6 @@ int main()
     default:
         break;
     }
+    } while (controller = 1);
+
 }

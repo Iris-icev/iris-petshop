@@ -1,0 +1,12 @@
+rodar o codigo
+na pasta irispetsho rodar
+gcc -c app.c -o app.o
+gcc -c cadastro/Cadastro.c -o cadastro/Cadastro.o
+gcc -c impressao/Impressao.c -o impressao/Impressao.o
+gcc -c servicos/GerarServicos.c -o servicos/GerarServicos.o
+gcc -c financeiro/Financeiro.c -o financeiro/Financeiro.o
+gcc -c venda/Venda.c -o venda/Venda.o
+gcc app.o cadastro/Cadastro.o impressao/Impressao.o servicos/GerarServicos.o financeiro/Financeiro.o venda/Venda.o -o output/app
+
+depois em output rodar
+./app
