@@ -226,7 +226,7 @@ void Cadastro()
     printf("+===========================================+\n");
     printf("|    1-CLIENTE         |   2-PRODUTO        |\n");
     printf("+===========================================+\n");
-    printf("|    3-FUNCIONÁRIO     |   4-SERVIÇO        |\n"); // trocar serviço por venda
+    printf("|    3-FUNCIONÁRIO     |   4-SERVIÇO        |\n"); 
     printf("+===========================================+\n");
     printf("|    5-ANIMAL          |   6-VENDA          |\n");
     printf("+===========================================+\n");
@@ -270,7 +270,7 @@ void Cadastro()
 
 void ImprimirCliente() {
     char linha[250]; 
-    char tecla[50];
+    char tecla[50   ];
 
     arquivoCliente = fopen("../Cliente.txt", "r");
     while(fgets(linha, sizeof(linha), arquivoCliente) != NULL){
