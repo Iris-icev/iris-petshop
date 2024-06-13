@@ -1,0 +1,2 @@
+Tipo de venda: Serviço | Descrição: banho-tosa | Valor total: R$ 75.00
+Tipo de venda: Produto | Descrição: ração | Valor total: R$ 69.99

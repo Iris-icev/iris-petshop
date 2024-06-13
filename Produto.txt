@@ -1,0 +1,2 @@
+Produto: Raçao | Preço: 24.99 | Código de barras: 45654654646546
+Produto: cama-dog | Preço: 78.00 | Código de barras: ,98

@@ -1,0 +1,7 @@
+Servico: tosa-higienica | Preço: 45.00
+Servico: banho-raça-porte-pequeno | Preço: 35.00
+Servico: veterinario | Preço: 120.00
+Servico: vacina | Preço: 150.00
+Servico: castração | Preço: 600.00
+Servico: banho-raça-porte-grande | Preço: 90.00
+Servico: vacina-raiva | Preço: 180.00
