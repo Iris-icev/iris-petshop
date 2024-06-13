@@ -1,0 +1,115 @@
+Controle de Pet Shop
+
+Este documento descreve como o código de controle de Pet Shop funciona, incluindo a estrutura de menus para cadastro, impressão e financeiro.
+
+Estrutura do Código
+
+Estruturas de Dados
+O código define várias estruturas para armazenar informações sobre clientes, produtos, funcionários, serviços, animais e vendas:
+
+struct cadastroCliente
+struct cadastroProduto
+struct cadastroFuncionario
+struct cadastroServico
+struct cadastroAnimal
+struct cadastroVenda
+Funções de Salvamento
+Para cada tipo de cadastro, existe uma função de salvamento que grava os dados em um arquivo de texto:
+
+void SalvarCliente(struct cadastroCliente newCliente)
+void SalvarProduto(struct cadastroProduto newProduto)
+void SalvarFuncionario(struct cadastroFuncionario newFuncionario)
+void SalvarServico(struct cadastroServico newServico)
+void SalvarAnimal(struct cadastroAnimal newAnimal)
+void SalvarVenda(struct cadastroVenda newVenda)
+Cada função abre o arquivo correspondente em modo de adição (a), escreve os dados e fecha o arquivo.
+
+Funções de Cadastro
+As funções de cadastro permitem ao usuário inserir dados para cada tipo de entidade. Após a inserção dos dados, as informações são salvas usando as funções de salvamento:
+
+void CadastroVenda()
+void CadastroCliente()
+void CadastroProduto()
+void CadastroFuncionario()
+void CadastroServico()
+void CadastroAnimal()
+Cada função solicita ao usuário os dados necessários e oferece a opção de cadastrar mais registros.
+
+Função de Cadastro Geral
+A função void Cadastro() exibe um menu para o usuário selecionar o tipo de cadastro que deseja realizar:
+
+1-CLIENTE
+2-PRODUTO
+3-FUNCIONÁRIO
+4-SERVIÇO
+5-ANIMAL
+6-VENDA
+7-RETORNAR
+Dependendo da escolha do usuário, a função correspondente é chamada.
+
+Funções de Impressão
+As funções de impressão leem os dados dos arquivos e os exibem na tela:
+
+void ImprimirCliente()
+void ImprimirProduto()
+void ImprimirFuncionario()
+void ImprimirServico()
+void ImprimirAnimal()
+void ImprimirVenda()
+Função de Impressão Geral
+A função void Impressao() exibe um menu para o usuário selecionar o tipo de dados que deseja imprimir:
+
+1-CLIENTE
+2-PRODUTO
+3-FUNCIONÁRIO
+4-SERVIÇO
+5-ANIMAL
+6-VENDA
+7-RETORNAR
+Dependendo da escolha do usuário, a função de impressão correspondente é chamada.
+
+Função Financeiro
+A função void Financeiro() exibe um menu de opções financeiras (a ser implementado):
+
+1-PRODUTO
+2-SERVIÇOS
+3-SALÁRIOS
+4-ALUGUEL
+5-RETORNAR
+Menu Principal
+A função void MenuPrincipal() exibe o menu principal do programa:
+
+1-CADASTRO
+2-IMPRESSÃO
+3-FINANCEIRO
+4-SAIR
+O usuário pode escolher entre cadastrar novos dados, imprimir dados existentes, acessar opções financeiras ou sair do programa.
+
+Função Principal
+A função int main() controla o fluxo principal do programa, exibindo o menu principal e chamando as funções apropriadas com base na escolha do usuário:
+
+int main() {   
+    int controller = 1;
+    MenuPrincipal();
+    do {
+        int menu = 0;
+        scanf("%d", &menu);
+        switch (menu) {
+            case 1:
+                Cadastro();
+                break;
+            case 2:
+                Impressao();
+                break;
+            case 3:
+                Financeiro();
+                break;
+            case 4:
+                controller = 0;
+                break;
+            default:
+                printf("Insira uma opção válida");
+                break;
+        }
+    } while (controller == 1);
+}
