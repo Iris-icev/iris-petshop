@@ -15,6 +15,13 @@ FILE *arquivoServico;
 FILE *arquivoAnimal;
 FILE *arquivoVenda;
 
+int qtdCliente = 0;
+int qtdProduto = 0;
+int qtdFuncionario = 0;
+int qtdServico = 0;
+int qtdAnimal = 0;
+int qtdVenda = 0;
+
 // =========================== CADASTRO ==================================================
 struct cadastroCliente
 {
@@ -84,7 +91,7 @@ void SalvarServico(struct cadastroServico newServico) {
     if (arquivoServico == 0) {
         printf("Erro ao ler o arquivo\n");
     }
-    fprintf(arquivoServico, "Servico: %s | Preço: %.2lf\n ", newServico.nome, newServico.preco);
+    fprintf(arquivoServico, "Servico: %s | Preço: %.2lf\n", newServico.nome, newServico.preco);
     fclose(arquivoFuncionario);
 }
 
@@ -406,15 +413,63 @@ void Impressao()
 void Financeiro()
 {
     // 4
-    printf("+===========================================+\n");
-    printf("|                  FINANCEIRO               |\n");
-    printf("+===========================================+\n");
-    printf("|       1-PRODUTO       |   2-SERVIÇOS      |\n");
-    printf("+===========================================+\n");
-    printf("|       3-SALÁRIOS      |   4-ALUGUEL       |\n"); // tirar aluguel
-    printf("+===========================================+\n");
-    printf("|                  5-RETORNAR               |\n");
-    printf("+===========================================+\n");
+    char tecla[10];
+    char linha[100];
+    arquivoFuncionario = fopen("../Funcionario.txt", "r");
+    while(fgets(linha, sizeof(linha), arquivoFuncionario) != NULL){
+        qtdFuncionario++;
+    }
+    arquivoCliente = fopen("../Cliente.txt", "r");
+    while(fgets(linha, sizeof(linha), arquivoCliente) != NULL){
+        qtdCliente++;
+    }
+    arquivoProduto = fopen("../Produto.txt", "r");
+    while(fgets(linha, sizeof(linha), arquivoProduto) != NULL){
+        qtdProduto++;
+    }
+    arquivoServico = fopen("../Servico.txt", "r");
+    while(fgets(linha, sizeof(linha), arquivoServico) != NULL){
+        qtdServico++;
+    }
+    arquivoAnimal = fopen("../Animal.txt", "r");
+    while(fgets(linha, sizeof(linha), arquivoAnimal) != NULL){
+        qtdAnimal++;
+    }
+    arquivoVenda = fopen("../Venda.txt", "r");
+    while(fgets(linha, sizeof(linha), arquivoVenda) != NULL){
+        qtdVenda++;
+    }
+    fclose(arquivoAnimal);
+    fclose(arquivoVenda);
+    fclose(arquivoServico);
+    fclose(arquivoProduto);
+    fclose(arquivoCliente);
+    fclose(arquivoFuncionario);
+    printf("+=====================================================+\n");
+    printf("|                        RELATÓRIO                    |\n");
+    printf("+=====================================================+\n");
+    printf("|      Clientes cadastrados:        %d                 |\n", qtdCliente);
+    printf("+=====================================================+\n");
+    printf("|      Produtos cadastrados:        %d                 |\n", qtdProduto);
+    printf("+=====================================================+\n");
+    printf("|      Funcionários cadastrados:    %d                 |\n", qtdFuncionario);
+    printf("+=====================================================+\n");
+    printf("|      Serviços cadastrados:        %d                 |\n", qtdServico);
+    printf("+=====================================================+\n");
+    printf("|      Animais cadastrados:         %d                 |\n", qtdAnimal);
+    printf("+=====================================================+\n");
+    printf("|      Vendas cadastradas:          %d                 |\n", qtdVenda);
+    printf("+=====================================================+\n");
+    printf("|      DIGITE UMA TECLA E APERTE ENTER PARA VOLTAR    |\n");
+    printf("+=====================================================+\n");
+    qtdCliente = 0;
+    qtdProduto = 0;
+    qtdFuncionario = 0;
+    qtdServico = 0;
+    qtdAnimal = 0;
+    qtdVenda = 0;
+    scanf("%s", &tecla);
+    MenuPrincipal();
 }
 
 void MenuPrincipal()
@@ -425,7 +480,7 @@ void MenuPrincipal()
     printf("+===========================================+\n");
     printf("|    1-CADASTRO         |   2-IMPRESSÃO     |\n");
     printf("+===========================================+\n");
-    printf("|    3-FINANCEIRO       |   4-SAIR          |\n"); // tirar serviço e venda
+    printf("|    3-RELATÓRIO        |   4-SAIR          |\n"); // tirar serviço e venda
     printf("+===========================================+\n");
     printf("|           INSIRA A OPÇÃO DESEJADA         |\n");
     printf("+===========================================+\n");
@@ -452,8 +507,9 @@ int main()
         break;
     case 4:
         controller = 0;
+        break;
     default:
-        printf("Insira uma opção válida");
+        printf("Insira uma opção válida\n");
         break;
     }
     } while (controller == 1);

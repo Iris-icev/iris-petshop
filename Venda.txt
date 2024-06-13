@@ -1,1 +1,2 @@
-Tipo de venda: serviço | Descrição: boquete-parafuso | Valor total: R$ 30.00Tipo de venda: aaaa | Descrição: asdadas | Valor total: R$ 4.00
+Tipo de venda: Serviço | Descrição: banho-tosa | Valor total: R$ 75.00
+Tipo de venda: Produto | Descrição: ração | Valor total: R$ 69.99
