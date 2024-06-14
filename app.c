@@ -7,6 +7,9 @@
 */
 #include <stdio.h>
 #include <stdlib.h>
+#include <windows.h>
+#include <locale.h>
+
 
 FILE *arquivoCliente;
 FILE *arquivoProduto;
@@ -489,6 +492,12 @@ void MenuPrincipal()
 
 int main()
 {   
+    UINT CPAGE_UTF8 = 65001;
+    UINT CPAGE_DEFAULT = GetConsoleOutputCP();
+    SetConsoleOutputCP(CPAGE_UTF8);
+    setlocale(LC_ALL, "Brazilian_Portuguese");
+    
+    
     int controller = 1;
     MenuPrincipal();
     do {
